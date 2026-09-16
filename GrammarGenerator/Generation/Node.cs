@@ -50,7 +50,7 @@ public sealed class Node
         var pad = new string(' ', indent * 2);
         var label = Symbol.Describe();
         if (VariantIndex.HasValue)
-            label += $"  [вариант {VariantIndex.Value}]";
+            label += $"  [alt. {VariantIndex.Value}]";
 
         var sb = new StringBuilder();
         sb.Append(pad).Append(label);

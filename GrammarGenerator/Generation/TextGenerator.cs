@@ -26,7 +26,10 @@ public sealed class TextGenerator(Grammar grammar, int? seed = null, int maxDept
     private Node Expand(Symbol symbol, int depth)
     {
         if (depth > _maxDepth)
-            throw new InvalidOperationException($"Превышена глубина на {symbol.Describe()}");
+            throw new InvalidOperationException($"Too deep recursion at {symbol.Describe()}");
+
+        if (symbol.Repeats == 1)
+            return ExpandSingle(symbol, depth);
 
         var singleRepeat = WithSingleRepeat(symbol);
         var node = new Node(symbol);

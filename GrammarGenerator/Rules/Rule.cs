@@ -51,7 +51,7 @@ public sealed class Rule : IEnumerable<Alternative>
         return this;
     }
 
-    /// <summary>Человеко-читаемое описание правила.</summary>
+    /// <summary>Человеко-читаемое описание правила в виде БНФ.</summary>
     public string Describe()
     {
         var descriptions = Alternatives.Select(a => a.Describe()).ToList();
