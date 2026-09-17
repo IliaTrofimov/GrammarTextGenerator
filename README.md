@@ -45,18 +45,24 @@ Now you can validate and print your grammar like this
 grammar.Validate();
 Console.WriteLine(grammar.Describe());
 ```
-```
-<Greeting> ::= "Hello" | "Good morning" /*w:0,5*/ | "Good afternoon" /*w:0,2*/
+```bnf
+<Greeting> ::= "Hello"
+             | "Good morning" /*w:0,5*/
+             | "Good afternoon" /*w:0,2*/
 
 <Message> ::= <Greeting> "! " <Question> "?"
 
-<Question> ::= "How " <_rule_1> /*n:polite question*/ | "Would you like " <_rule_2> /*n:appointment*/
+<Question> ::= "How " <_rule_1> /*n:polite question*/
+             | "Would you like " <_rule_2> /*n:appointment*/
 [Grammar]
-<Greeting> ::= "Hello" | "Good morning" /*w:0,5*/ | "Good afternoon" /*w:0,2*/
+<Greeting> ::= "Hello"
+             | "Good morning" /*w:0,5*/
+             | "Good afternoon" /*w:0,2*/
 
 <Message> ::= <Greeting> "! " <Question> "?"
 
-<Question> ::= "How " <_rule_1> /*n:polite question*/ | "Would you like " <_rule_2> /*n:appointment*/
+<Question> ::= "How " <_rule_1> /*n:polite question*/
+             | "Would you like " <_rule_2> /*n:appointment*/
 ```
 
 ## Generation
